@@ -1,0 +1,46 @@
+<html lang="uz"></html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foydalanuvchi Parolini Yangilash</title>
+    <style>
+      body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #fce4ec, #f8bbd0); display: flex;
+      justify-content: center; align-items: center; height: 100vh; margin: 0; }
+      form { background: #ffffff; padding: 30px; border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); width: 100%; max-width: 500px;
+      display: flex; flex-direction: column; gap: 15px; } h1 { text-align:
+      center; color: #c2185b; font-size: 24px; margin-bottom: 20px; }
+      input[type="number"], input[type="password"] { width: 100%; padding: 12px;
+      border: 1px solid #ddd; border-radius: 8px; font-size: 16px; }
+      input[type="number"]:focus, input[type="password"]:focus { border-color:
+      #c2185b; outline: none; box-shadow: 0 0 5px rgba(194, 24, 91, 0.5); }
+      button { width: 100%; padding: 12px; background: #c2185b; color: white;
+      border: none; border-radius: 8px; font-size: 16px; cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s; } button:hover {
+      background-color: #880e4f; transform: scale(1.02); } button:active {
+      transform: scale(0.98); } .form-group { display: flex; flex-direction:
+      column; gap: 10px; }
+    </style>
+  </head>
+  <body>
+    <form action="/worker/update-password" method="POST">
+      <h1>Parolni Yangilash</h1>
+      <div class="form-group">
+        <input
+          type="number"
+          name="worker_id"
+          placeholder="Xodim ID"
+          required
+        />
+        <input
+          type="password"
+          name="new_password"
+          placeholder="Yangi Parol"
+          required
+        />
+      </div>
+      <button type="submit">Yangilash</button>
+    </form>
+  </body>
+</html>

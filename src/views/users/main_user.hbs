@@ -1,0 +1,45 @@
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ish Vaqtlari Tanlash</title>
+    <style>
+      body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e3f2fd, #bbdefb); display: flex;
+      justify-content: center; align-items: center; height: 100vh; margin: 0; }
+      table { width: 100%; max-width: 800px; border-collapse: collapse;
+      background: #ffffff; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); } th, td {
+      padding: 12px 15px; border: 1px solid #ddd; text-align: left; } th {
+      background-color: #1976d2; color: white; } td { background-color: #f1f1f1;
+      } tr:nth-child(even) td { background-color: #bbdefb; } a.button { padding:
+      10px 20px; background-color: #0288d1; color: white; border: none;
+      border-radius: 5px; text-decoration: none; display: inline-block;
+      transition: background-color 0.3s, transform 0.2s; } a.button:hover {
+      background-color: #0277bd; }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>Times ID</th>
+          <th>Boshlanish Vaqti</th>
+          <th>Tugash Vaqti</th>
+          <th>Tanlash</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each times}}
+          <tr>
+            <td>{{this.id}}</td>
+            <td>{{this.start_time}}</td>
+            <td>{{this.end_time}}</td>
+            <td>
+              <a href="/select-schedule/{{this.id}}" class="button">Tanlash</a>
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </body>
+</html>

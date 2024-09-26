@@ -1,0 +1,54 @@
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ish Vaqtlar Ro'yxati</title>
+    <style>
+      body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f5f5; padding: 20px; } table { width: 100%;
+      border-collapse: collapse; background: #ffffff; box-shadow: 0 4px 10px
+      rgba(0, 0, 0, 0.1); margin-bottom: 20px; } th, td { padding: 12px 15px;
+      border: 1px solid #ddd; text-align: left; } th { background-color:
+      #1976d2; color: white; } td { background-color: #f1f1f1; }
+      tr:nth-child(even) td { background-color: #bbdefb; } h1 { text-align:
+      center; color: #1976d2; margin-bottom: 20px; } .actions { display: flex;
+      gap: 10px; } .btn { padding: 6px 12px; color: white; border: none;
+      border-radius: 5px; cursor: pointer; } .btn-delete { background-color:
+      #e53935; } .btn-add { background-color: #1976d2; padding: 10px 20px;
+      font-size: 16px; display: block; width: 200px; margin: 20px auto;
+      text-align: center; } .btn:hover { opacity: 0.8; }
+    </style>
+  </head>
+  <body>
+    <h1>Ish Vaqtlar Ro'yxati</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Boshlanish Vaqti</th>
+          <th>Tugash Vaqti</th>
+          <th>Jami Joylar Soni</th>
+          <th>Amallar</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each users}}
+          <tr>
+            <td>{{this.id}}</td>
+            <td>{{this.start_time}}</td>
+            <td>{{this.end_time}}</td>
+            <td>{{this.total_slots}}</td>
+            <td class="actions">
+              <a
+                href="/work-schedules/delete/{{this.id}}"
+                class="btn btn-delete"
+              >O'chirish</a>
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+
+    <a href="/work-schedules/add" class="btn btn-add">Ish Vaqti Qo'shish</a>
+  </body>
+</html>

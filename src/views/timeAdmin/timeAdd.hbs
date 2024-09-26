@@ -1,0 +1,53 @@
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ish Vaqti Qo'shish</title>
+    <style>
+      body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e1f5fe, #81d4fa); display: flex;
+      justify-content: center; align-items: center; height: 100vh; margin: 0; }
+      form { background: #ffffff; padding: 30px; border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); width: 100%; max-width: 500px;
+      display: flex; flex-direction: column; gap: 15px; } h1 { text-align:
+      center; color: #0288d1; font-size: 24px; margin-bottom: 20px; }
+      input[type="time"], input[type="number"] { width: 100%; padding: 12px;
+      border: 1px solid #ddd; border-radius: 8px; font-size: 16px; }
+      input[type="time"]:focus, input[type="number"]:focus { border-color:
+      #0288d1; outline: none; box-shadow: 0 0 5px rgba(2, 136, 209, 0.5); }
+      button { width: 100%; padding: 12px; background: #0288d1; color: white;
+      border: none; border-radius: 8px; font-size: 16px; cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s; } button:hover {
+      background-color: #0277bd; transform: scale(1.02); } button:active {
+      transform: scale(0.98); } .form-group { display: flex; flex-direction:
+      column; gap: 10px; }
+    </style>
+  </head>
+  <body>
+    <form action="/work-schedules/add" method="POST">
+      <h1>Ish Vaqti Qo'shish</h1>
+      <div class="form-group">
+        <input
+          type="time"
+          name="start_time"
+          placeholder="Ish Vaqti Boshlanishi"
+          required
+        />
+        <input
+          type="time"
+          name="end_time"
+          placeholder="Ish Vaqti Tugashi"
+          required
+        />
+        <input
+          type="number"
+          name="total_slots"
+          placeholder="Jami joylar soni"
+          required
+          min="1"
+        />
+      </div>
+      <button type="submit">Qo'shish</button>
+    </form>
+  </body>
+</html>

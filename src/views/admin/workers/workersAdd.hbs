@@ -1,0 +1,47 @@
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xodim Qo'shish</title>
+    <style>
+      body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f1f8e9, #c5e1a5); display: flex;
+      justify-content: center; align-items: center; height: 100vh; margin: 0; }
+      form { background: #ffffff; padding: 30px; border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); width: 100%; max-width: 500px;
+      display: flex; flex-direction: column; gap: 15px; } h1 { text-align:
+      center; color: #388e3c; font-size: 24px; margin-bottom: 20px; }
+      input[type="text"], input[type="tel"], select { width: 100%; padding:
+      12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; }
+      input[type="text"]:focus, input[type="tel"]:focus, select:focus {
+      border-color: #388e3c; outline: none; box-shadow: 0 0 5px rgba(56, 142,
+      60, 0.5); } button { width: 100%; padding: 12px; background: #388e3c;
+      color: white; border: none; border-radius: 8px; font-size: 16px; cursor:
+      pointer; transition: background-color 0.3s, transform 0.2s; } button:hover
+      { background-color: #2e7d32; transform: scale(1.02); } button:active {
+      transform: scale(0.98); } .form-group { display: flex; flex-direction:
+      column; gap: 10px; }
+    </style>
+  </head>
+  <body>
+    <form action="/worker/add" method="POST">
+      <h1>Xodim Qo'shish</h1>
+      <div class="form-group">
+        <input type="text" name="name" placeholder="Xodimning Ismi" required />
+        <input
+          type="tel"
+          name="phone_number"
+          placeholder="Telefon raqami"
+          required
+        />
+        <select name="role" required>
+          <option value="" disabled selected>Rolni tanlang</option>
+          <option value="admin">Admin</option>
+          <option value="worker">Xodim</option>
+          <option value="manager">Menejer</option>
+        </select>
+      </div>
+      <button type="submit">Qo'shish</button>
+    </form>
+  </body>
+</html>

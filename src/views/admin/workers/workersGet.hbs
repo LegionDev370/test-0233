@@ -1,0 +1,61 @@
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foydalanuvchilar Ro'yxati</title>
+    <style>
+      body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f5f5; padding: 20px; } table { width: 100%;
+      border-collapse: collapse; background: #ffffff; box-shadow: 0 4px 10px
+      rgba(0, 0, 0, 0.1); margin-bottom: 20px; } th, td { padding: 12px 15px;
+      border: 1px solid #ddd; text-align: left; } th { background-color:
+      #1976d2; color: white; } td { background-color: #f1f1f1; }
+      tr:nth-child(even) td { background-color: #bbdefb; } h1 { text-align:
+      center; color: #1976d2; margin-bottom: 20px; } .actions { display: flex;
+      gap: 10px; } .btn { padding: 6px 12px; color: white; border: none;
+      border-radius: 5px; cursor: pointer; } .btn-delete { background-color:
+      #e53935; } .btn-update { background-color: #43a047; } .btn:hover {
+      opacity: 0.8; }
+    </style>
+  </head>
+  <body>
+    <h1>Foydalanuvchilar Ro'yxati</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Ism</th>
+          <th>Telefon</th>
+          <th>Roli</th>
+          <th>Maxsus ID</th>
+          <th>Password</th>
+          <th>Amallar</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each users}}
+          <tr>
+            <td>{{this.id}}</td>
+            <td>{{this.name}}</td>
+            <td>{{this.phone_number}}</td>
+            <td>{{this.role}}</td>
+            <td>{{this.worker_id}}</td>
+            <!-- Maxsus ID -->
+            <td>{{this.password}}</td>
+            <!-- Password -->
+            <td class="actions">
+              <a
+                href="/worker/update-password"
+                class="btn btn-update"
+              >Yangilash</a>
+              <a
+                href="/worker/deletea/{{this.id}}"
+                class="btn btn-delete"
+              >O'chirish</a>
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </body>
+</html>
